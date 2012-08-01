@@ -1,12 +1,8 @@
 require 'redmine'
 
 # Taken from lib/redmine.rb
-if RUBY_VERSION < '1.9'
-  require 'faster_csv'
-else
   require 'csv'
   FCSV = CSV
-end
 
 require 'dispatcher'
 Dispatcher.to_prepare :timesheet_plugin do
