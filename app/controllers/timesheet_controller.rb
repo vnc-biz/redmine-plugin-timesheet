@@ -123,7 +123,7 @@ class TimesheetController < ApplicationController
     if User.current.admin?
       return Project.find(:all, :order => 'name ASC')
     else
-      return Project.find(:all, :conditions => Project.visible_by(User.current), :order => 'name ASC')
+      return Project.find(:all, :conditions => Project.visible_condition(User.current), :order => 'name ASC')
     end
   end
 
