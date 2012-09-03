@@ -125,6 +125,7 @@ class TimesheetController < ApplicationController
       Project.timesheet_order_by_name.timesheet_with_membership(User.current)
     else
       Project.timesheet_order_by_name.all(:conditions => Project.visible_by(User.current))
+#      return Project.find(:all, :conditions => Project.visible_condition(User.current), :order => 'name ASC')
     end
   end
 
